@@ -8,7 +8,7 @@ setInterval(() =>{
       });//先离开，然后马上回去排队
   $(`.images > img:nth-child(${handleN(n+1)})`).removeClass('enter leave').addClass('current');
   n+=1;
-  },2000)
+  },1500)
 
 function handleN(n){ //1 2 3 4
   if(n>4) {
