@@ -1,32 +1,10 @@
-*{margin:0;padding:0;}
-*{box-sizing: border-box;}
-.window{
-  width:100px;
-  height: 100px;
-  overflow: hidden;/*不加这句时我们可以看见图片的移动排队过程*/
-  margin:130px auto;
-}
-.images{
-  position: relative;
-}
-.images img{
-  position: absolute;
-  top: 0px;
-  transition:all 200ms;/*这是图片移动的时间，移动时间必须比两个切换状态间隔小一些，
-  轮播的时候，图片移动时间应该肉眼可察觉，不然就变成动画了*/
-  /*当图片移动时间 为 状态切换间隔时间的 1/100,或者更小的时候，轮播就像动画一样演示了*/
-}
-
-.images img.current{
-  z-index: 1;
-  transform: translateX(0);
-  left:0;
-}
-.images img.leave{
-  transform: translateX(-100%);
- 
-}
-.images img.enter{
-  transform: translateX(100%);
-  /*z-index: 1;*/
-}
+*{margin:0;padding:0;box-sizing: border-box;}
+h1, h2, h3, h4, h5, h6{font-weight:normal;}
+h1{text-align: center;padding: 50px 0 70px;}
+.main{display: flex;align-items: center;justify-content: center;flex-direction: column;}
+.images-wrapper{width:100px;height: 100px;overflow: hidden;}/*不加overflow:hidden;时我们可以看见图片的移动排队过程*/
+.images{position: relative;}
+.images img{position: absolute;top: 0px;transition:all 220ms;}/*这是图片移动的时间，移动时间必须比两个切换状态间隔小一些，轮播的时候，图片移动时间应该肉眼可察觉，不然就变成动画了*//*当图片移动时间 为 状态切换间隔时间的 1/100,或者更小的时候，轮播就像动画一样演示了*/
+.images img.current{z-index: 1;transform: translateX(0);}
+.images img.leave{transform: translateX(-100%);}
+.images img.enter{transform: translateX(100%);}
