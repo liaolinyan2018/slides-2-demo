@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 30px;
+}
+h1 {
+    text-align: center;
+    height: 30%;
+    padding: 50px 0 50px;
+}
+body {
+    /* main垂直居中 */
+    height: 100vh;
+    position: relative;
+}
+main {
+    /* main水平居中 */
+    max-width: 930px;
+    margin: 0 auto;   
+    border: 1px solid red;
+    width: 400px;
+    height: 400px;
+    /* main垂直居中 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.images-wrapper {
+    width:100px;
+    height: 100px;
+    overflow: hidden;
+    /* images-wrapper 水平居中 */
+    margin: 50px auto;
+}
+/*不加overflow:hidden;时我们可以看见图片的移动排队过程*/
+.images {
+    position: relative;
+}
+.images img {
+    position: absolute;
+    top: 0px;
+    transition:all 700ms ease-in-out;
+}
+/*这是图片移动的时间，移动时间必须比两个切换状态间隔小一些，轮播的时候，图片移动时间应该肉眼可察觉，不然就变成动画了*/
+/*当图片移动时间 为 状态切换间隔时间的 1/100,或者更小的时候，轮播就像动画一样演示了*/
+
+.images img.current {
+    z-index: 1;
+    transform: translateX(0);
+}
+.images img.leave {
+    transform: translateX(-100%);
+}
+.images img.enter {
+    transform: translateX(100%);
+}
